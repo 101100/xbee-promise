@@ -170,6 +170,49 @@ xbee.remoteTransmit({
 });
 ```
 
+### Remote Monitor
+
+Asynchronous events originating in a remote device may be monitored using the remoteMonitor command. Examples of remote
+events are a switch is turned on, detected by the device and sent to the coordinator or a remote sensor sending periodic
+samples. When a message is received the promise will be resolved and the message will be sent to the deferred function.
+The data is contained in the `data` parameter. The  calling class is responsible for restarting the monitor after the
+message is received.
+
+```javascript
+
+var node = this;
+
+this.startMonitor = function() {
+    xbee.remoteMonitor()
+        .then(function(message){
+            node.handleMessage(message);
+        }).catch(function(err) {
+            console.log("Failed in monitor loop: " + err);
+        }).fin(function() {
+            // restart the monitor
+            node.startMonitor();
+        });
+};
+// Start the network monitor
+this.startMonitor();
+
+```
+### Remote Transmit - No Promise
+Messages may be sent to the remote network without a promise returned. This is useful in the case where the network is
+monitored through the remoteMonitor() method and a response needs to be sent to the device.
+
+```javascript
+this.handleMessage = function(message) {
+    var response = {response:"OK"};
+    var settings = {
+        destination64:device.serialNumber,
+        type: "ZIGBEE_TRANSMIT_REQUEST",
+        data: JSON.stringify(response)
+    };
+    this.xbee.remoteTransmitNoResponse(settings);
+}
+
+```
 Some more examples can be found in
 [the repository](https://github.com/101100/xbee-promise/tree/master/examples).
 
