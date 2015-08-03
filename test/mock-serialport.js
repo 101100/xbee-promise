@@ -50,6 +50,10 @@ MockSerialPort.prototype.drain = function (callback) {
     callback();
 };
 
+MockSerialPort.prototype.isOpen = function () {
+    return mockdata.opened;
+};
+
 module.exports = mockdata;
 
 module.exports.SerialPort = MockSerialPort;
