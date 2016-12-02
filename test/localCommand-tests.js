@@ -22,7 +22,7 @@ var mockserialport = require("./mock-serialport.js");
 var mockXbeeApi = require("./mock-xbee-api.js");
 
 var xbeePromise = proxyquire("../lib/xbee-promise.js", {
-    'serialport': mockserialport,
+    'serialport': mockserialport.MockSerialPort,
     'xbee-api': mockXbeeApi
 });
 

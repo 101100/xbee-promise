@@ -56,4 +56,4 @@ MockSerialPort.prototype.isOpen = function () {
 
 module.exports = mockdata;
 
-module.exports.SerialPort = MockSerialPort;
+module.exports.MockSerialPort = MockSerialPort;
