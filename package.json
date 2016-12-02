@@ -1,6 +1,6 @@
 {
   "name": "xbee-promise",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "description": "Promise-based library for XBee wireless modules based on xbee-api",
   "author": {
     "name": "Jason Heard",
