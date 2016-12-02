@@ -173,11 +173,8 @@ xbee.remoteTransmit({
 Some more examples can be found in
 [the repository](https://github.com/101100/xbee-promise/tree/master/examples).
 
-## Planned future work
+## Future work
 
-Future planned expansion of this module include:
-- Adding command line tool to perform all three types of commands (for testing, etc).
-- Translating inputs and outputs of commands logically.  E.g. ATNI command should
-  return a string, not an array of character codes, ATD1 (and friends) should accept
-  numeric values, and not require them to be in a byte array of the correct length.
-
+This library is in maintenance mode.  Future development is aimed at the
+[xbee-rx](http://github.com/101100/xbee-rx/) library.  Pull requests are welcomed,
+however.
