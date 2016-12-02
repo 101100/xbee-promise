@@ -30,17 +30,17 @@
   "dependencies": {
     "parambulator": "^1.5",
     "q": "^1.4",
-    "serialport": "^1.7",
-    "xbee-api": "^0.3"
+    "serialport": "^4.0",
+    "xbee-api": "^0.5.1"
   },
   "devDependencies": {
-    "grunt": "^0.4",
-    "grunt-cli": "^0.1",
+    "grunt": "^1.0",
+    "grunt-cli": "^1.2",
+    "grunt-contrib-watch": "^1.0",
     "grunt-jslint": "^1.1",
     "grunt-simple-mocha": "^0.4",
-    "grunt-contrib-watch": "^0.6",
     "proxyquire": "^1.6",
-    "should": "^7.0"
+    "should": "^11.1"
   },
   "scripts": {
     "test": "grunt test",
